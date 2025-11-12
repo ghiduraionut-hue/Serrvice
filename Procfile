@@ -1,1 +1,1 @@
-web: gunicorn app:app
+web: gunicorn app_render_full_features_fixed:app
