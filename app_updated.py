@@ -16,8 +16,8 @@ DB_NAME = 'service_auto_web.db'
 # Inițializare DB cu câmp suplimentar "nume"
 conn = sqlite3.connect(DB_NAME)
 cursor = conn.cursor()
-cursor.execute("CREATE TABLE IF NOT EXISTS masini (id INTEGER PRIMARY KEY AUTOINCREMENT, numar TEXT, marca TEXT, model TEXT, vin TEXT, nume TEXT)")
-cursor.execute("CREATE TABLE IF NOT EXISTS reparatii (id INTEGER PRIMARY KEY AUTOINCREMENT, masina_id INTEGER, tip TEXT, piesa TEXT, cod TEXT, cost REAL, FOREIGN KEY(masina_id) REFERENCES masini(id))")
+cursor.execute("CREATE TABLE IF NOT EXISTS masini (id INTEGER PRIMARY KEY AUTOINCREMENT, numar TEXT, marca TEXT, model TEXT, vin TEXT, nume TEXT, motorizare TEXT, cod motor TEXT)")
+cursor.execute("CREATE TABLE IF NOT EXISTS reparatii (id INTEGER PRIMARY KEY AUTOINCREMENT, masina_id INTEGER, tip TEXT, piesa TEXT,numar kilometrii TEXT, cod TEXT, cost REAL, FOREIGN KEY(masina_id) REFERENCES masini(id))")
 conn.commit()
 conn.close()
 
